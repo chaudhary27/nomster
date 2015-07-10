@@ -33,3 +33,46 @@ body {
 	font-family: 'chunkfiveroman', sans-serif;
 	font-size: 26px;
 }
+
+.pagination 
+{
+
+  span.disabled {
+    color: #aaa !important;
+  }
+	  em.current 
+	  {
+	    margin: 0 auto;
+	    padding: 0 14px;
+	    line-height: 38px;
+	    text-decoration: none;
+	    background-color: #754B0F;
+	    border: 1px solid #DDD;
+	    border-left-width: 0;
+	    color: white
+
+	  }
+	  .previous_page 
+	  {
+	    border-left: 1px solid #ddd;
+	    color: black;
+	    text-decoration: none;
+	  }
+	  .next_page 
+	  {
+	    color: black;
+	    text-decoration: none;
+	  }
+	  a 
+	  {
+	    color: black;
+	    text-decoration: none;
+	  }
+}
+
+.field_with_errors {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  border-radius: 3px;
+  padding:8px;
+}
