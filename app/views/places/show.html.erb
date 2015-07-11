@@ -8,7 +8,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
 		function initialize() {
-			  var myLatlng = new google.maps.LatLng(<%= @place.latitude %>, <%= @place.longitude %>);
+			  var myLatlng = new google.maps.LatLng(<%= @place.latitude %>,<%= @place.longitude %>);
 			  var mapOptions = {
 			    zoom: 12,
 			    center: myLatlng
