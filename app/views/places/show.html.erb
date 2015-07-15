@@ -42,11 +42,11 @@
 	</div>
 	
 </div>
-<div class="clear"></div>
-<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-	<%= f.input :caption %>
-  <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
-<% end %>
+
+
+	
+  
+
 
 <div class="clear"></div>
 <!-- Modal -->
@@ -72,6 +72,35 @@
 	</div>
 </div>
 
+
+<div class="clear"></div>
+<!-- Modal -->
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+      <div class="modal-body">
+        <%= f.input :caption %>
+		<%= f.input :picture %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <br />
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -79,7 +108,12 @@
 	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
 	  Add a comment
 	</button>
+	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myPhotoModal">
+  	  Add a Photo
+	</button>
 </div>
+
+
 
 <div class="clear"></div>
 	<% @place.comments.each do |comment| %>
@@ -97,16 +131,17 @@
 
 
 
-<h1>Photos</h1>
-
+<div class="col-xs-10 col-xs-offset-1">
+<h1 class="pull-center">Photos</h1>
 <% @place.photos.each do |photo| %>
   <div>
-    <blockquote>
+    <i>
       <b><%= photo.caption %></b>
-    </blockquote>
+      <b><%= image_tag photo.picture %></b>
+    </i>
   </div>
 <% end %>
-
+</div>
 
 
 
