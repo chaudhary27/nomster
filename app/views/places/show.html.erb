@@ -43,6 +43,12 @@
 	
 </div>
 <div class="clear"></div>
+<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+	<%= f.input :caption %>
+  <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+<% end %>
+
+<div class="clear"></div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -89,13 +95,17 @@
 		</div>
 	<% end %>
 
-<%= simple_form_for @photo, :url => '#' do |f| %>
-	<%= f.input :caption %>
-  <%= f.submit "Add a Comment", :class => 'btn btn-primary' %>
+
+
+<h1>Photos</h1>
+
+<% @place.photos.each do |photo| %>
+  <div>
+    <blockquote>
+      <b><%= photo.caption %></b>
+    </blockquote>
+  </div>
 <% end %>
-
-
-
 
 
 
