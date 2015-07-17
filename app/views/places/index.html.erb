@@ -21,6 +21,16 @@
 </div>
 <% end %>
 
+<% if place.photos.present? %>
+<div class="col-xs-10 col-xs-offset-1">
+	<% if place.photos.last.picture.present? %>
+	<%= image_tag place.photos.order("id ASC").last.picture, :class => 'image-responsive' %>
+	<% end %>
+</div>
+<% end %>
+
+
+
 </div>
 <% end %>
 
